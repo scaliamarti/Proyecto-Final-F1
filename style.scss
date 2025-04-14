@@ -1,0 +1,155 @@
+// Variables
+$primary-color: #dc3545; // Rojo F1
+$secondary-color: #343a40; // Gris oscuro
+$text-light: #ffffff;
+$background-light: #f8f9fa;
+$card-border: #dee2e6;
+$font-main: 'Helvetica', sans-serif;
+
+// Animaciones
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  25% {
+    transform: rotateZ(2deg);
+  }
+  50% {
+    transform: rotateZ(0deg);
+  }
+  75% {
+    transform: rotateZ(-2deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes slideInFlag {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+// Reset básico
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-main;
+  background-color: $background-light;
+  color: #212529;
+}
+
+// Header
+header {
+  background-color: $primary-color;
+  color: $text-light;
+  text-align: center;
+  padding: 1rem 0;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+// Navbar
+.navbar {
+  background-color: $secondary-color;
+
+  .nav-link {
+    color: $text-light;
+    margin-right: 1rem;
+
+    &:hover {
+      color: $primary-color;
+      transition: color 0.3s;
+    }
+  }
+}
+
+// Secciones
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid $primary-color;
+  padding-bottom: 0.5rem;
+  color: $primary-color;
+  animation: fadeInUp 1s ease-out;
+}
+
+// Cards
+.card {
+  border: 1px solid $card-border;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.8s ease-out;
+
+  .card-body {
+    padding: 1.5rem;
+
+    h3, h4 {
+      color: $primary-color;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+  }
+}
+
+// Footer
+footer {
+  background-color: $secondary-color;
+  color: $text-light;
+  padding: 1rem 0;
+  text-align: center;
+  margin-top: auto;
+}
+
+
+
+// Responsive
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+}
